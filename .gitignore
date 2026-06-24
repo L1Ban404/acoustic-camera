@@ -1,5 +1,6 @@
 # Vivado generated state and reports
 /build/
+/ov5640_hdmi.gen/
 /.Xil/
 *.jou
 *.log
