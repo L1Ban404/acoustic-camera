@@ -1,7 +1,7 @@
 set script_dir [file normalize [file dirname [info script]]]
 source [file join $script_dir create_project.tcl]
 
-set project_file [file join [file normalize [file join $script_dir .. build vivado]] acoustic_camera.xpr]
+set project_file [file join [file normalize [file join $script_dir .. build vivado]] acoustic-camera-repro.xpr]
 open_project $project_file
 launch_runs synth_1 -jobs 4
 wait_on_run synth_1

@@ -2,10 +2,11 @@
 set script_dir [file normalize [file dirname [info script]]]
 set repo_dir [file normalize [file join $script_dir ..]]
 set build_dir [file normalize [file join $repo_dir build vivado]]
+set project_name acoustic-camera-repro
 set part xc7z020clg400-2
 
 file mkdir $build_dir
-create_project acoustic_camera $build_dir -part $part -force
+create_project $project_name $build_dir -part $part -force
 
 set_property ip_repo_paths [list \
     [file join $repo_dir ip_repo] \

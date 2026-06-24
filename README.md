@@ -18,7 +18,7 @@
 & 'C:\AMDDesignTools\2025.2\Vivado\bin\vivado.bat' -mode batch -source scripts\run_synth.tcl
 ```
 
-脚本会在 `build/vivado` 创建工程、重建 Block Design 产物并运行综合。综合报告位于 `build/vivado/acoustic_camera.runs/synth_1/`。
+脚本会在 `build/vivado` 创建名为 `acoustic-camera-repro` 的工程、重建 Block Design 产物并运行综合。综合报告位于 `build/vivado/acoustic-camera-repro.runs/synth_1/`。
 
 ## 已知边界
 
