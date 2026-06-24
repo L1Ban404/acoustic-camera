@@ -51,4 +51,4 @@ PS 软件首先通过 SCCB 配置 OV5640，再初始化 VDMA 和各 AXI-Lite 外
 
 - `system.bd` 是集成入口；不要手工编辑 Vivado 生成的 `system_wrapper.v`。
 - 自定义 IP 和 HLS IP 已被分别纳入 `ip_repo/` 与 `hls_ip_repo/`；修改算法接口前，应同时检查 Block Design 连接与 PS 驱动参数。
-- XDC 由历史工程导入。烧录前必须针对实际开发板、摄像头和 HDMI/DVI 接口复核引脚与电气标准。
+- XDC 是工程的板级约束。烧录前必须针对实际开发板、摄像头和 HDMI/DVI 接口复核引脚与电气标准。

@@ -41,7 +41,7 @@ add_files -norecurse [glob -nocomplain [file join $src_root ip * *.xci]]
 add_files -fileset constrs_1 -norecurse \
     [file join $repo_dir srcs constrs_1 new ov5640_lcd.xdc]
 
-# The archived project was last saved with Vivado 2024.1.  Upgrade every
+# The versioned IP configuration targets the 2024.1 catalog revision. Upgrade
 # catalog IP in the freshly-created project so that the 2025.2 catalog can
 # regenerate the Block Design outputs deterministically.
 upgrade_ip [get_ips]

@@ -1,22 +1,22 @@
-# Source inventory
+# 工程内容清单
 
-The cleaned project was reconstructed from `HLS与Vivado工程/prj/ov5640_hdmi` in the parent archive.
+本仓库完整管理声学相机的可重建设计输入；从克隆后的仓库即可由 Tcl 脚本创建 Vivado 工程，不依赖外部工程目录。
 
-| Original asset | Managed destination | Purpose |
+| 工程内容 | 仓库位置 | 用途 |
 | --- | --- | --- |
-| `ov5640_hdmi.srcs` | `srcs` | Block Design, HDL imports, XCI configurations, and constraints |
-| `prj/ip_repo` | `ip_repo` | Custom packaged RTL and HLS IP |
-| `hls/*/hls/impl/ip` | `hls_ip_repo` | Packaged acoustic-processing HLS IP |
+| 设计源 | `srcs` | Block Design、HDL、XCI 配置和约束 |
+| 自定义 IP | `ip_repo` | 摄像头、DVI、图像处理等封装 IP |
+| 声学 HLS IP | `hls_ip_repo` | `calculate`、`delay`、`inter`、`vram_add` 等已打包 IP |
 
-Generated Vivado artifacts deliberately excluded from this repository include `.Xil`, `.gen`, `.cache`, `.runs`, journals, and logs.
+仓库有意排除 Vivado 生成物，包括 `.Xil`、`.gen`、`.cache`、`.runs`、journal 和日志文件。
 
-## Design-reference documents
+## 设计参考文档
 
-The following parent-directory documents were used to document intent and architecture. They are reference material, not build inputs.
+下列设计说明用于记录工程背景与架构决策；它们不是构建输入，也不是本仓库的外部依赖。
 
-| Document | Scope | How it is used here |
+| 文档 | 覆盖范围 | 在工程文档中的用途 |
 | --- | --- | --- |
-| `高帧率低功耗的声学相机系统3月10日(1).docx` | Later 16-channel architecture | Beamforming model, fractional delay, sliding-window update, 128×72 grid, and performance terminology |
-| `基于Zynq的声学相机.pdf` | Earlier 8-channel implementation | Functional module descriptions, PS/PL control division, camera/overlay path, and host-control behavior |
+| 《高帧率低功耗的声学相机系统》 | 16 通道架构 | 波束形成模型、分数延迟、滑窗更新、128×72 网格与性能术语 |
+| 《基于 Zynq 的声学相机》 | 8 通道架构 | 功能模块、PS/PL 分工、相机/叠加通路与上位机控制 |
 
-The reports describe different development stages. Counts and performance values are therefore retained with their stated context rather than treated as one simultaneous hardware configuration; see [DESIGN_BASIS.md](DESIGN_BASIS.md).
+两份说明记录不同的设计配置。通道数和性能数值均保留其适用上下文，而不被视为同一硬件配置；详见 [DESIGN_BASIS.md](DESIGN_BASIS.md)。
