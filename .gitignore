@@ -13,6 +13,10 @@
 *.str
 *.dmp
 
+# Python test caches
+__pycache__/
+*.py[cod]
+
 # Editor and operating-system files
 .DS_Store
 Thumbs.db
