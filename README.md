@@ -13,6 +13,10 @@
 - `docs/`：设计背景、数据通路、接口职责、性能口径与设计参考。
 - `build/`：Vivado 自动生成的工程、缓存和报告；不纳入版本控制。
 
+## 构建环境
+
+当前已在 Vivado 2025.2 上编写并验证构建脚本。使用其他 Vivado 版本时，IP 升级结果和实现结果可能不同。
+
 ## 运行综合
 
 在 PowerShell 中执行：
@@ -22,6 +26,16 @@
 ```
 
 脚本会在 `build/vivado` 创建名为 `acoustic-camera-repro` 的工程、重建 Block Design 产物并运行综合。综合报告位于 `build/vivado/acoustic-camera-repro.runs/synth_1/`。
+
+## 运行实现与 bitstream 生成
+
+实现脚本会重建工程，运行布局布线，生成 DRC、利用率和时序报告，并仅在不存在 `Error` 级 DRC 违规时写出 bitstream：
+
+```powershell
+& 'C:\AMDDesignTools\2025.2\Vivado\bin\vivado.bat' -mode batch -source scripts\run_impl.tcl
+```
+
+产物位于 `build/vivado/acoustic-camera-repro.runs/impl_1/`：`drc.rpt`、`utilization.rpt`、`timing_summary.rpt` 以及 `acoustic-camera-repro.bit`。
 
 ## 已知边界
 
