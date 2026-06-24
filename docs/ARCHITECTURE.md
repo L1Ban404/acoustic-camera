@@ -16,6 +16,14 @@ PS: SCCB 初始化、AXI-Lite 参数、串口/上位机控制 ──────
                                                              HDMI / DVI
 ```
 
+![16 通道后续架构：延迟、缓存、插值、双计算流水线和视频缓存的连接关系](images/word-16ch-overall-microarchitecture.png)
+
+*图：后续 16 通道架构的总体微架构，来源于 `高帧率低功耗的声学相机系统3月10日(1).docx`。*
+
+![早期 8 通道系统：音频、功率缓存、着色、VDMA 和 Zynq PS 的接口关系](images/pdf-8ch-system-overview.jpg)
+
+*图：早期 8 通道系统的模块与控制接口，来源于 `基于Zynq的声学相机.pdf`。该图用于说明功能分区，不代表当前工程的通道数。*
+
 ## PL 功能分区
 
 | 分区 | 主要职责 | 工程中的实现线索 |
@@ -30,6 +38,10 @@ PS: SCCB 初始化、AXI-Lite 参数、串口/上位机控制 ──────
 ## PS 与控制面
 
 PS 软件首先通过 SCCB 配置 OV5640，再初始化 VDMA 和各 AXI-Lite 外设。上位机可以通过串口协议调节热力图色阶阈值及相机/热力图的叠加透明度。控制面不进入高吞吐声学计算闭环，因此参数更新应以帧边界或设计定义的安全时点生效。
+
+![视频双路 VDMA、AXI4-Stream 和 AXI-Lite 控制通路](images/pdf-video-vdma-dataflow.jpg)
+
+*图：早期实现的视频叠加数据流；橙色为视频、紫色为 AXI4-Stream、绿色为 AXI-Lite。*
 
 ## 时钟与存储
 
