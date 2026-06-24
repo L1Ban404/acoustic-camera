@@ -20,6 +20,7 @@ update_ip_catalog
 # single-precision multiplier in the project so the package is self-contained.
 create_ip -name floating_point -vendor xilinx.com -library ip \
     -module_name floating_point_v7_1_18
+set_property CONFIG.Maximum_Latency {false} [get_ips floating_point_v7_1_18]
 set_property -dict [list \
     CONFIG.Operation_Type {Multiply} \
     CONFIG.C_Latency {1} \
