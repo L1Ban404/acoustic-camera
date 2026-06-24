@@ -1,0 +1,11 @@
+# Vivado generated state and reports
+/build/
+/.Xil/
+*.jou
+*.log
+*.str
+*.dmp
+
+# Editor and operating-system files
+.DS_Store
+Thumbs.db
